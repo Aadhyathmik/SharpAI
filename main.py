@@ -111,26 +111,14 @@ with col1:
 with col2:
     college2 = st.selectbox("Select college:", list(college_data.keys()), index=default_index2)
 
+col3, col4, col5 = st.columns(3)
+with col4 :
+    submit_button = st.button('Revise Essay for Selected Colleges')
 
 # Dropdown for college selection
 #college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
 #college2 = st.selectbox("Select the second college:", list(college_data.keys()), index=default_index2)
 
-st.markdown(
-    """
-    <style>
-    .center-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;  /* Center vertically */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown('<div class="center-button">', unsafe_allow_html=True)
 
 
 # Function to modify essay using OpenAI ChatCompletion API
@@ -161,7 +149,8 @@ def main():
 
    
     # Button to generate revised essays
-    if st.button("Revise Essay for Selected Colleges"):
+    #if st.button("Revise Essay for Selected Colleges"):
+    if submit_button:
         # Get the mission and vision for each selected college
         mission1 = college_data[college1]["mission"]
         vision1 = college_data[college1]["vision"]
