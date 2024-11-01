@@ -110,7 +110,7 @@ m = st.markdown("""
 <style>
     /* Normal button style */
     div.stButton > button:first-child {
-        background-color: #4CAF50; /* Soft green */
+        background-color: #333333; /* Dark Gray */
         color: #FFFFFF;
         font-size: 16px;
         border-radius: 8px;
@@ -118,13 +118,13 @@ m = st.markdown("""
     }
     /* Hover effect */
     div.stButton > button:hover {
-        background-color: #45a049; /* Darker green on hover */
+        background-color: #555555; /* Lighter Dark Gray on hover */
         color: #FFFFFF;
     }
     /* Disabled button style */
     div.stButton > button:disabled {
-        background-color: #d3d3d3; /* Light gray when disabled */
-        color: #7a7a7a; /* Gray text when disabled */
+        background-color: #A9A9A9; /* Medium Gray for disabled */
+        color: #D3D3D3; /* Light Gray text for disabled */
     }
     </style>
     """, unsafe_allow_html=True)
