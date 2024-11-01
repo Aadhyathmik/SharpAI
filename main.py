@@ -59,7 +59,7 @@ st.markdown(
 #st.image(image_file, use_column_width=False, width=300)  # Adjust width as needed
 #st.markdown('</div>', unsafe_allow_html=True)
 
-st.divider()
+
 st.title("ESSBOT College Essay Companion")
 st.divider()
 
@@ -88,12 +88,14 @@ essay_words_min_value = 0
 essay_words_max_value = 1000
 essay_words_initial_value = 300
 
-col1, col2 = st.columns(2)
+col1, col2,col3,col4 = st.columns(4)
 with col1:
-    slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
+    st.markdown("**Max Essay Word Count:**")
+    slider_value = st.slider("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
 
-with col2:
-    essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
+with col4:
+    st.markdown("**Max Essay Word Count:**")
+    essay_words = st.number_input("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
     
 
 # Create a slider
@@ -108,7 +110,8 @@ if slider_value != essay_words:
 
 
 # Input text area for essay paragraph
-essay = st.text_area("Enter your essay paragraph here:", height=300, value=sample_essay)
+st.markdown("**Enter your essay paragraph here:**")
+essay = st.text_area("", height=300, value=sample_essay)
 
 
 # Step 1: Initialize the button state in session state if not already present
@@ -167,10 +170,12 @@ m = st.markdown("""
 # Dropdown for college selection
 col1, col2 = st.columns(2)
 with col1:
+    st.markdown("*Choose a college:**")
     college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
 
 with col2:
-    college2 = st.selectbox("Select college:", list(college_data.keys()), index=default_index2)
+     st.markdown("*Choose a college:**")
+    college2 = st.selectbox("", list(college_data.keys()), index=default_index2)
 
 col3, col4, col5 = st.columns(3)
 with col4 :
