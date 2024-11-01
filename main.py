@@ -217,17 +217,20 @@ def main():
     # Button to generate revised essays
     #if st.button("Revise Essay for Selected Colleges"):
     if submit_button:
-        st.session_state.button_disabled = True
-        # Get the mission and vision for each selected college
-        mission1 = college_data[college1]["mission"]
-        vision1 = college_data[college1]["vision"]
+        with st.spinner("Making the Recipe..."):
+            st.session_state.button_disabled = True
+            # Get the mission and vision for each selected college
+            mission1 = college_data[college1]["mission"]
+            vision1 = college_data[college1]["vision"]
 
-        mission2 = college_data[college2]["mission"]
-        vision2 = college_data[college2]["vision"]
+            mission2 = college_data[college2]["mission"]
+            vision2 = college_data[college2]["vision"]
 
-        # Call OpenAI API to revise essay for each college with custom prompt
-        revised_essay_college1 = get_modified_essay(essay, mission1, vision1, user_prompt)
-        revised_essay_college2 = get_modified_essay(essay, mission2, vision2, user_prompt)
+            # Call OpenAI API to revise essay for each college with custom prompt
+            revised_essay_college1 = get_modified_essay(essay, mission1, vision1, user_prompt)
+            revised_essay_college2 = get_modified_essay(essay, mission2, vision2, user_prompt)
+
+            st.success("✨ Your essay has been successfully revised! 🎉")
     else:
         # Initial placeholder text
         revised_essay_college1 = "Your revised essay will appear here."
