@@ -43,11 +43,12 @@ def get_modified_essay(essay, mission, vision):
           frequency_penalty=0,
           presence_penalty=0,
         )
-
-        if 'choices' in response and response['choices']:
-            return response['choices'][0]['message']['content'].strip()
-        else:
-            return "Error: The response from OpenAI was empty or in an unexpected format."
+        msg = response.choices[0].message.content
+        return msg
+        #if 'choices' in response and response['choices']:
+        #    return response['choices'][0]['message']['content'].strip()
+        #else:
+        #    return "Error: The response from OpenAI was empty or in an unexpected format."
     except Exception as e:
         return f"Error: {str(e)}"
 # Streamlit app layout
