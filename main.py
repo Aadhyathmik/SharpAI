@@ -56,10 +56,16 @@ st.title("College Essay Revision Tool with OpenAI")
 
 sample_essay = """I witnessed how powerful Python coding language is. I learned it and created a small project.
 I want to take advanced computer science and use technology to solve real-world problems.
-Using new technologies, we can tackle issues in education, farming, and other areas."""
+Using new technologies, we can tackle issues in education, farming, and other areas.
+
+I participated in my computer science club at my school, where we learned collaboratively.
+We also talked to many tech professionals to understand what they are currently working on.
+
+I once participated in a hackathon where the theme was how we can make use of solar energy. I joined a team and built a prototype. It was so much fun."""
+
 
 # Input text area for essay paragraph
-essay = st.text_area("Enter your essay paragraph here:",height=600,value=sample_essay)
+essay = st.text_area("Enter your essay paragraph here:",height=300,value=sample_essay)
 
 # Dropdown for college selection
 college1 = st.selectbox("Select the first college:", list(college_data.keys()))
