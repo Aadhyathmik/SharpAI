@@ -191,7 +191,7 @@ def get_modified_essay(essay, mission, vision, user_prompt):
             model=model_input,
             messages=[
                 {"role": "system", "content": "You are an assistant that helps revise college essays to better align with college missions, visions, and user-provided prompts."},
-                {"role": "user", "content": f"Here is a college essay written by a student:\n\nEssay: {essay}\n\nThe mission of the college is: {mission}\nThe vision of the college is: {vision}\n\nUser-Provided Prompt: {user_prompt}\n\nPlease revise the essay to align with the mission, vision, and user provided prompt, making it more compelling for the admissions committee. Please restrict the length of the essay to strictly {number_input_value} words."}
+                {"role": "user", "content": f"Here is a college essay written by a student:\n\nEssay: {essay}\n\nThe mission of the college is: {mission}\nThe vision of the college is: {vision}\n\nUser-Provided Prompt: {user_prompt}\n\nPlease revise the essay to align with the mission, vision, and user provided prompt, making it more compelling for the admissions committee. Please restrict the length of the essay to strictly {essay_words} words."}
             ],
             temperature=1,
             max_tokens=1000,
