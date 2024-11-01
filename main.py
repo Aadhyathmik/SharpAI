@@ -239,7 +239,7 @@ def main():
             progress_placeholder.text("")
             message = (
             f"🎓✨ Congratulations! Your essay has been successfully revised for "
-            f"**{college_name}**! 🎉\n\n"
+            f"**{college1} and {college2} **! 🎉\n\n"
             "Your hard work is about to pay off, and we can't wait to see you shine! "
             "Take a moment to review the changes and prepare to submit your masterpiece! 🚀"
             )
