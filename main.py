@@ -88,18 +88,10 @@ essay_words_min_value = 0
 essay_words_max_value = 1000
 essay_words_initial_value = 300
 
-if 'slider_value' not in st.session_state:
-    st.session_state.slider_value = essay_words_initial_value
-
 col1, col2,col3 = st.columns(3)
 with col1:
     st.markdown("**Max Essay Word Count:**")
-    slider_value = st.slider("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value, step=5)
-
-with col3:
-    st.markdown("**Max Essay Word Count:**")
     essay_words = st.number_input("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
-    
 
 # Create a slider
 #slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
@@ -112,12 +104,12 @@ with col3:
 #    essay_words = slider_value
 
 # Update the slider value based on the number input
-if essay_words != st.session_state.slider_value:
-    st.session_state.slider_value = essay_words
+#if essay_words != st.session_state.slider_value:
+#    st.session_state.slider_value = essay_words
 
 # Input text area for essay paragraph
-st.markdown("**Enter your essay paragraph here:**")
-essay = st.text_area("", height=300, value=sample_essay)
+#st.markdown("**Enter your essay paragraph here:**")
+#essay = st.text_area("", height=300, value=sample_essay)
 
 
 # Step 1: Initialize the button state in session state if not already present
