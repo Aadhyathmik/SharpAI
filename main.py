@@ -76,15 +76,22 @@ sample_prompt="Why do you want to study your chosen major and why do you want to
 
 sample_words = 300
 
+
+# Input text area for custom prompt
+user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
+
+# Input text area for custom prompt
+#essay_words = st.text_area("Max Essay Word Count:", value=sample_words)
+
 essay_words_min_value = 0
 essay_words_max_value = 1000
 essay_words_initial_value = 300
 
 # Create a slider
-slider_value = st.slider("Select a value:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
+slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
 
 # Create a number input, initialized to the slider's value
-number_input_value = st.number_input("Enter a number:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
+essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
 
 # Display the selected values
 st.write(f"Slider value: {slider_value}")
@@ -94,20 +101,10 @@ st.write(f"Number input value: {number_input_value}")
 if slider_value != number_input_value:
     number_input_value = slider_value
 
-# Input text area for custom prompt
-user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
-
-# Input text area for custom prompt
-essay_words = st.text_area("Max Essay Word Count:", value=sample_words)
 
 # Input text area for essay paragraph
 essay = st.text_area("Enter your essay paragraph here:", height=300, value=sample_essay)
 
-# Calculate word count
-word_count = count_words(essay)
-
-# Display the word count next to the text box
-st.write(f"Word count: {word_count}")
 
 # Step 1: Initialize the button state in session state if not already present
 if "button_disabled" not in st.session_state:
