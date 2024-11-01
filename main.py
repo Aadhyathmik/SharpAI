@@ -29,8 +29,9 @@ college_data = {
 
 # Function to modify essay using OpenAI ChatCompletion API
 def get_modified_essay(essay, mission, vision):
-    client = openai.Client(api_key=secret_key)
-    response = client.chat.completions.create(
+    try:
+        client = openai.Client(api_key=secret_key)
+        response = client.chat.completions.create(
           model= model_input,
           messages=[
                 {"role": "system", "content": "You are an assistant that helps revise college essays to better align with college missions and visions."},
@@ -41,10 +42,14 @@ def get_modified_essay(essay, mission, vision):
           top_p=1,
           frequency_penalty=0,
           presence_penalty=0,
-    )
+        )
 
-    return response['choices'][0]['message']['content'].strip()
-
+        if 'choices' in response and response['choices']:
+            return response['choices'][0]['message']['content'].strip()
+        else:
+            return "Error: The response from OpenAI was empty or in an unexpected format."
+    except Exception as e:
+        return f"Error: {str(e)}"
 # Streamlit app layout
 st.title("College Essay Revision Tool with OpenAI")
 
