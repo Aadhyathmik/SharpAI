@@ -28,16 +28,18 @@ college_data = {
 
 # Function to modify essay using OpenAI ChatCompletion API
 def get_modified_essay(essay, mission, vision):
-    messages = [
-        {"role": "system", "content": "You are an assistant that helps revise college essays to better align with college missions and visions."},
-        {"role": "user", "content": f"Here is a college essay written by a student:\n\nEssay: {essay}\n\nThe mission of the college is: {mission}\nThe vision of the college is: {vision}\n\nPlease revise the essay to align with the mission and vision of the college. Make it more compelling for the admissions committee."}
-    ]
-
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # or "gpt-4" if available
-        messages=messages,
-        max_tokens=250,
-        temperature=0.7
+    client = openai.Client(api_key=openai_api_key)
+    response = client.chat.completions.create(
+          model= model_input,
+          messages=[
+                {"role": "system", "content": "You are an assistant that helps revise college essays to better align with college missions and visions."},
+                {"role": "user", "content": f"Here is a college essay written by a student:\n\nEssay: {essay}\n\nThe mission of the college is: {mission}\nThe vision of the college is: {vision}\n\nPlease revise the essay to align with the mission and vision of the college. Make it more compelling for the admissions committee."}
+          ],
+          temperature=1,
+          max_tokens=1000,
+          top_p=1,
+          frequency_penalty=0,
+          presence_penalty=0,
     )
 
     return response['choices'][0]['message']['content'].strip()
