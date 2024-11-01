@@ -33,12 +33,16 @@ st.sidebar.text(" ")
 st.sidebar.text(" ")
 st.sidebar.markdown("[Privacy Policy](%s)" % pp)  
 
-#image_file="Essbot3.jpg"
+image_file="Essbot3.jpg"
 #st.image(image_file, width=300)
 #link_url="https://graderbotai.com/"
 
-st.divider()
+st.markdown('<div class="centered-image">', unsafe_allow_html=True)
+st.image(image_file, use_column_width=False, width=300)  # Adjust width as needed
+st.markdown('</div>', unsafe_allow_html=True)
+
 st.title("ESSBOT College Essay Companion")
+st.divider()
 
 sample_essay = """I witnessed how powerful Python coding language is. I learned it and created a small project.
     I want to take advanced computer science and use technology to solve real-world problems.
