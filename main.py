@@ -84,7 +84,7 @@ essay_words_initial_value = 300
 slider_value = st.slider("Select a value:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
 
 # Create a number input, initialized to the slider's value
-number_input_value = st.number_input("Enter a number:", min_value=min_value, max_value=max_value, value=slider_value)
+number_input_value = st.number_input("Enter a number:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
 
 # Display the selected values
 st.write(f"Slider value: {slider_value}")
