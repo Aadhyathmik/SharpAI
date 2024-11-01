@@ -106,17 +106,6 @@ def initialize():
     college1 = st.selectbox("Select the first college:", list(college_data.keys()))
     college2 = st.selectbox("Select the second college:", list(college_data.keys()))
 
-    # Display the output text boxes in two side-by-side columns with unique keys
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.subheader(f"Revised Essay for {college1}")
-        st.text_area(f"Revised Essay for {college1}", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
-        
-    with col2:
-        st.subheader(f"Revised Essay for {college2}")
-        st.text_area(f"Revised Essay for {college2}", revised_essay_college2, height=600, disabled=True, key="revised_essay2")
-
 
 def main():
     """ The main function that handles the Streamlit app logic.  """
@@ -139,6 +128,19 @@ def main():
         # Initial placeholder text
         revised_essay_college1 = "Your revised essay will appear here."
         revised_essay_college2 = "Your revised essay will appear here."
+
+    
+    # Display the output text boxes in two side-by-side columns with unique keys
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader(f"Revised Essay for {college1}")
+        st.text_area(f"Revised Essay for {college1}", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
+        
+    with col2:
+        st.subheader(f"Revised Essay for {college2}")
+        st.text_area(f"Revised Essay for {college2}", revised_essay_college2, height=600, disabled=True, key="revised_essay2")
+
 
 # Runs program
 if __name__ == "__main__":
