@@ -78,7 +78,8 @@ sample_words = 300
 
 
 # Input text area for custom prompt
-st.markdown("**Enter the Essay Prompt:**")
+#st.markdown("**Enter the Essay Prompt:**")
+st.markdown("<h4 style='margin-bottom: 0;'>**Enter the Essay Prompt:**</h4>", unsafe_allow_html=True)
 user_prompt = st.text_area("", value=sample_prompt)
 
 # Input text area for custom prompt
@@ -108,8 +109,8 @@ with col1:
 #    st.session_state.slider_value = essay_words
 
 # Input text area for essay paragraph
-#st.markdown("**Enter your essay paragraph here:**")
-#essay = st.text_area("", height=300, value=sample_essay)
+st.markdown("**Enter your essay paragraph here:**")
+essay = st.text_area("", height=300, value=sample_essay)
 
 
 # Step 1: Initialize the button state in session state if not already present
