@@ -78,7 +78,8 @@ sample_words = 300
 
 
 # Input text area for custom prompt
-user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
+st.markdown("**Enter the Essay Prompt:**")
+user_prompt = st.text_area("", value=sample_prompt)
 
 # Input text area for custom prompt
 #essay_words = st.text_area("Max Essay Word Count:", value=sample_words)
@@ -87,11 +88,19 @@ essay_words_min_value = 0
 essay_words_max_value = 1000
 essay_words_initial_value = 300
 
+col1, col2 = st.columns(2)
+with col1:
+    slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
+
+with col2:
+    essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
+    
+
 # Create a slider
-slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
+#slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
 
 # Create a number input, initialized to the slider's value
-essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
+#essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
 
 # Optional: Update the number input value when the slider changes
 if slider_value != essay_words:
