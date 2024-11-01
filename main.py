@@ -29,7 +29,7 @@ college_data = {
 def get_modified_essay(essay, mission, vision, user_prompt):
     try:
         client = openai.Client(api_key=secret_key)
-        response = client.ChatCompletion.create(
+        response = client.chat.completions.create(
             model=model_input,
             messages=[
                 {"role": "system", "content": "You are an assistant that helps revise college essays to better align with college missions, visions, and user-provided prompts."},
