@@ -94,8 +94,8 @@ slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_valu
 essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
 
 # Optional: Update the number input value when the slider changes
-if slider_value != number_input_value:
-    number_input_value = slider_value
+if slider_value != essay_words:
+    essay_words = slider_value
 
 
 # Input text area for essay paragraph
