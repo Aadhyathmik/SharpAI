@@ -78,8 +78,8 @@ sample_words = 300
 
 
 # Input text area for custom prompt
-#st.markdown("**Enter the Essay Prompt:**")
-st.markdown("<h4 style='margin-bottom: 0;'>**Enter the Essay Prompt:**</h4>", unsafe_allow_html=True)
+st.markdown("**Enter the Essay Prompt:**")
+#st.markdown("<h4 style='margin-bottom: 0;'>**Enter the Essay Prompt:**</h4>", unsafe_allow_html=True)
 user_prompt = st.text_area("", value=sample_prompt)
 
 # Input text area for custom prompt
