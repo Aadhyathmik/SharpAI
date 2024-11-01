@@ -33,7 +33,8 @@ st.sidebar.text(" ")
 st.sidebar.text(" ")
 st.sidebar.markdown("[Privacy Policy](%s)" % pp)  
 
-image="Essbot3.jpg"
+image_path="Essbot3.jpg"
+image = Image.open(image_path)
 #st.image(image_file, width=300)
 #link_url="https://graderbotai.com/"
 
