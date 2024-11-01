@@ -8,6 +8,7 @@ import openai
 # Initialize OpenAI with your API key
 secret_key = st.secrets["openapi"]["openapi_key"]
 openai.api_key = secret_key
+model_input="gpt-4o" # "gpt-4o-mini", "gpt-4", "gpt-3.5-turbo"
 
 # Sample list of colleges with mission and vision statements
 college_data = {
@@ -28,7 +29,7 @@ college_data = {
 
 # Function to modify essay using OpenAI ChatCompletion API
 def get_modified_essay(essay, mission, vision):
-    client = openai.Client(api_key=openai_api_key)
+    client = openai.Client(api_key=secret_key)
     response = client.chat.completions.create(
           model= model_input,
           messages=[
