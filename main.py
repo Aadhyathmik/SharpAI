@@ -93,10 +93,6 @@ slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_valu
 # Create a number input, initialized to the slider's value
 essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
 
-# Display the selected values
-st.write(f"Slider value: {slider_value}")
-st.write(f"Number input value: {number_input_value}")
-
 # Optional: Update the number input value when the slider changes
 if slider_value != number_input_value:
     number_input_value = slider_value
