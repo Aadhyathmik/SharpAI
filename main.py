@@ -237,7 +237,13 @@ def main():
             #progress_placeholder.text("Preparing for ...")
             revised_essay_college2 = get_modified_essay(essay, mission2, vision2, user_prompt)
             progress_placeholder.text("")
-            st.success("✨ Your essay has been successfully revised! 🎉")
+            message = (
+            f"🎓✨ Congratulations! Your essay has been successfully revised for "
+            f"**{college_name}**! 🎉\n\n"
+            "Your hard work is about to pay off, and we can't wait to see you shine! "
+            "Take a moment to review the changes and prepare to submit your masterpiece! 🚀"
+            )
+            st.success(message)
     else:
         # Initial placeholder text
         revised_essay_college1 = "Your revised essay will appear here."
