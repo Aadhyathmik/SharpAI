@@ -174,7 +174,7 @@ with col1:
     college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
 
 with col2:
-     st.markdown("*Choose a college:**")
+    st.markdown("*Choose a college:**")
     college2 = st.selectbox("", list(college_data.keys()), index=default_index2)
 
 col3, col4, col5 = st.columns(3)
