@@ -104,6 +104,7 @@ default_index1 = list(college_data.keys()).index("MIT")  # Default to "MIT"
 default_index2 = list(college_data.keys()).index("Harvard")  # Default to "Harvard"
 
 # Dropdown for college selection
+col1, col2 = st.columns(2)
 with col1:
     college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
 
