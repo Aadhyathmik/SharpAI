@@ -103,17 +103,35 @@ default_index1 = list(college_data.keys()).index("MIT")  # Default to "MIT"
 # Set a default index for the selectbox
 default_index2 = list(college_data.keys()).index("Harvard")  # Default to "Harvard"
 
+# Dropdown for college selection
+with col1:
+    college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
+
+with col2:
+    college2 = st.selectbox("Select the second college:", list(college_data.keys()), index=default_index2)
+
 
 # Dropdown for college selection
-college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
+#college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
 
 
 
-college2 = st.selectbox("Select the second college:", list(college_data.keys()), index=default_index2)
+#college2 = st.selectbox("Select the second college:", list(college_data.keys()), index=default_index2)
 
+st.markdown(
+    """
+    <style>
+    .center-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-
-
+st.markdown('<div class="center-button">', unsafe_allow_html=True)
 
 
 # Function to modify essay using OpenAI ChatCompletion API
