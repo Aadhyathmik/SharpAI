@@ -12,7 +12,7 @@ openai.api_key = secret_key
 model_input = "gpt-4"  # Adjust to "gpt-4", "gpt-3.5-turbo" as needed
 
 ##Initialize
-st.sidebar.image("Essbot.jpg", use_column_width=True)
+st.sidebar.image("Essbot2.jpg", use_column_width=True)
 st.sidebar.divider()
 lnkd_profile_url="https://www.linkedin.com/in/rajvarahagiri/"
 st.sidebar.markdown("[Rajkumar Varahagiri](%s)" % lnkd_profile_url)  
@@ -33,7 +33,7 @@ st.sidebar.text(" ")
 st.sidebar.text(" ")
 st.sidebar.markdown("[Privacy Policy](%s)" % pp)  
 
-image_file="Essbot1.jpg"
+image_file="Essbot2.jpg"
 st.image(image_file, use_column_width=True)
 link_url="https://graderbotai.com/"
 
