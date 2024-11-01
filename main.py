@@ -229,12 +229,14 @@ def main():
             vision2 = college_data[college2]["vision"]
 
             # Call OpenAI API to revise essay for each college with custom prompt
-            progress_placeholder.text("Finetuning for College {college1}...")
+            message_placeholder = "Finetuning for College " + college1 + "..."
+            progress_placeholder.text(message_placeholder)
             revised_essay_college1 = get_modified_essay(essay, mission1, vision1, user_prompt)
-            progress_placeholder.text("Finetuning for College {college2}...")
+            message_placeholder = "Finetuning for College " + college2 + "..."
+            progress_placeholder.text(message_placeholder)
             #progress_placeholder.text("Preparing for ...")
             revised_essay_college2 = get_modified_essay(essay, mission2, vision2, user_prompt)
-
+            progress_placeholder.text("")
             st.success("✨ Your essay has been successfully revised! 🎉")
     else:
         # Initial placeholder text
