@@ -54,8 +54,12 @@ def get_modified_essay(essay, mission, vision):
 # Streamlit app layout
 st.title("College Essay Revision Tool with OpenAI")
 
+sample_essay = """I witnessed how powerful Python coding language is. I learned it and created a small project.
+I want to take advanced computer science and use technology to solve real-world problems.
+Using new technologies, we can tackle issues in education, farming, and other areas."""
+
 # Input text area for essay paragraph
-essay = st.text_area("Enter your essay paragraph here:")
+essay = st.text_area("Enter your essay paragraph here:",height=600,value=sample_essay)
 
 # Dropdown for college selection
 college1 = st.selectbox("Select the first college:", list(college_data.keys()))
@@ -84,7 +88,19 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader(f"Revised Essay for {college1}")
     st.text_area(f"Revised Essay for {college1}", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
-    
+    st.markdown(
+        f"""
+        <button onclick="navigator.clipboard.writeText(`{revised_essay_college1}`)" style="margin-top: 10px;">Copy Text</button>
+        """,
+        unsafe_allow_html=True
+    )
+
 with col2:
     st.subheader(f"Revised Essay for {college2}")
     st.text_area(f"Revised Essay for {college2}", revised_essay_college2, height=600, disabled=True, key="revised_essay2")
+    st.markdown(
+        f"""
+        <button onclick="navigator.clipboard.writeText(`{revised_essay_college2}`)" style="margin-top: 10px;">Copy Text</button>
+        """,
+        unsafe_allow_html=True
+    )
