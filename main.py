@@ -91,7 +91,7 @@ essay_words_initial_value = 300
 col1, col2,col3 = st.columns(3)
 with col1:
     st.markdown("**Max Essay Word Count:**")
-    essay_words = st.number_input("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
+    essay_words = st.number_input("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
 
 # Create a slider
 #slider_value = st.slider("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
