@@ -88,12 +88,12 @@ essay_words_min_value = 0
 essay_words_max_value = 1000
 essay_words_initial_value = 300
 
-col1, col2,col3,col4 = st.columns(4)
+col1, col2,col3 = st.columns(3)
 with col1:
     st.markdown("**Max Essay Word Count:**")
     slider_value = st.slider("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
 
-with col4:
+with col3:
     st.markdown("**Max Essay Word Count:**")
     essay_words = st.number_input("", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
     
@@ -170,11 +170,11 @@ m = st.markdown("""
 # Dropdown for college selection
 col1, col2 = st.columns(2)
 with col1:
-    st.markdown("*Choose a college:**")
+    st.markdown("**Choose a college:**")
     college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
 
 with col2:
-    st.markdown("*Choose a college:**")
+    st.markdown("**Choose a college:**")
     college2 = st.selectbox("", list(college_data.keys()), index=default_index2)
 
 col3, col4, col5 = st.columns(3)
