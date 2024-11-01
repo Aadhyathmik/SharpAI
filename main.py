@@ -106,17 +106,14 @@ default_index2 = list(college_data.keys()).index("Harvard")  # Default to "Harva
 # Dropdown for college selection
 col1, col2 = st.columns(2)
 with col1:
-    college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
+    college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
 
 with col2:
-    college2 = st.selectbox("Select the second college:", list(college_data.keys()), index=default_index2)
+    college2 = st.selectbox("Select college:", list(college_data.keys()), index=default_index2)
 
 
 # Dropdown for college selection
 #college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
-
-
-
 #college2 = st.selectbox("Select the second college:", list(college_data.keys()), index=default_index2)
 
 st.markdown(
@@ -126,6 +123,7 @@ st.markdown(
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100vh;  /* Center vertically */
     }
     </style>
     """,
