@@ -76,6 +76,9 @@ user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
 # Input text area for essay paragraph
 essay = st.text_area("Enter your essay paragraph here:", height=300, value=sample_essay)
 
+# Step 1: Initialize the button state in session state if not already present
+if "button_disabled" not in st.session_state:
+    st.session_state.button_disabled = False  # Button starts as enabled
 
 
 
@@ -164,6 +167,7 @@ def main():
     # Button to generate revised essays
     #if st.button("Revise Essay for Selected Colleges"):
     if submit_button:
+        st.session_state.button_disabled = True
         # Get the mission and vision for each selected college
         mission1 = college_data[college1]["mission"]
         vision1 = college_data[college1]["vision"]
@@ -191,6 +195,7 @@ def main():
         st.subheader(f"Revised Essay for {college2}")
         st.text_area(f"Revised Essay for {college2}", revised_essay_college2, height=600, disabled=True, key="revised_essay2")
 
+    st.session_state.button_disabled = False
 
 # Runs program
 if __name__ == "__main__":
