@@ -88,6 +88,9 @@ essay_words_min_value = 0
 essay_words_max_value = 1000
 essay_words_initial_value = 300
 
+if 'slider_value' not in st.session_state:
+    st.session_state.slider_value = essay_words_initial_value
+
 col1, col2,col3 = st.columns(3)
 with col1:
     st.markdown("**Max Essay Word Count:**")
@@ -108,6 +111,9 @@ with col3:
 if slider_value != essay_words:
     essay_words = slider_value
 
+# Update the slider value based on the number input
+if essay_words != st.session_state.slider_value:
+    st.session_state.slider_value = essay_words
 
 # Input text area for essay paragraph
 st.markdown("**Enter your essay paragraph here:**")
