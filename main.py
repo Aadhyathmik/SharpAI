@@ -108,8 +108,8 @@ with col3:
 #essay_words = st.number_input("Max Essay Word Count:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=slider_value)
 
 # Optional: Update the number input value when the slider changes
-if slider_value != essay_words:
-    essay_words = slider_value
+#if slider_value != essay_words:
+#    essay_words = slider_value
 
 # Update the slider value based on the number input
 if essay_words != st.session_state.slider_value:
