@@ -34,11 +34,11 @@ st.sidebar.text(" ")
 st.sidebar.markdown("[Privacy Policy](%s)" % pp)  
 
 image_file="Essbot3.jpg"
-st.image(image_file, use_column_width=True)
+st.image(image_file, width=300)
 link_url="https://graderbotai.com/"
 
 st.divider()
-st.title("GraderBot College Essay Companion")
+st.title("ESSBOT College Essay Companion")
 
 
 # Sample list of colleges with mission and vision statements
