@@ -26,27 +26,21 @@ college_data = {
     # Add more colleges as needed
 }
 
-# Function to modify essay using OpenAI API
+# Function to modify essay using OpenAI ChatCompletion API
 def get_modified_essay(essay, mission, vision):
-    prompt = f"""
-    Here is a college essay written by a student:
+    messages = [
+        {"role": "system", "content": "You are an assistant that helps revise college essays to better align with college missions and visions."},
+        {"role": "user", "content": f"Here is a college essay written by a student:\n\nEssay: {essay}\n\nThe mission of the college is: {mission}\nThe vision of the college is: {vision}\n\nPlease revise the essay to align with the mission and vision of the college. Make it more compelling for the admissions committee."}
+    ]
 
-    Essay: {essay}
-
-    The mission of the college is: {mission}
-    The vision of the college is: {vision}
-
-    Please revise the essay to align with the mission and vision of the college. Make it more compelling for the admissions committee.
-    """
-
-    response = openai.Completion.create(
-        engine="text-davinci-003",  # Use "gpt-3.5-turbo" or other available models
-        prompt=prompt,
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",  # or "gpt-4" if available
+        messages=messages,
         max_tokens=250,
         temperature=0.7
     )
 
-    return response.choices[0].text.strip()
+    return response['choices'][0]['message']['content'].strip()
 
 # Streamlit app layout
 st.title("College Essay Revision Tool with OpenAI")
