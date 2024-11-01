@@ -1,6 +1,8 @@
 import streamlit as st
 import openai
 import PyPDF2 
+from PIL import Image
+
 
 def add_space(n=1):
   for _ in range(n):
