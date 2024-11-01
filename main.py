@@ -108,15 +108,26 @@ default_index2 = list(college_data.keys()).index("Harvard")  # Default to "Harva
 
 m = st.markdown("""
 <style>
-div.stButton > button:first-child {
-    background-color: #0099ff;
-    color:#ffffff;
-}
-div.stButton > button:hover {
-    background-color: #00ff00;
-    color:#ff0000;
+    /* Normal button style */
+    div.stButton > button:first-child {
+        background-color: #4CAF50; /* Soft green */
+        color: #FFFFFF;
+        font-size: 16px;
+        border-radius: 8px;
+        padding: 10px 20px;
     }
-</style>""", unsafe_allow_html=True)
+    /* Hover effect */
+    div.stButton > button:hover {
+        background-color: #45a049; /* Darker green on hover */
+        color: #FFFFFF;
+    }
+    /* Disabled button style */
+    div.stButton > button:disabled {
+        background-color: #d3d3d3; /* Light gray when disabled */
+        color: #7a7a7a; /* Gray text when disabled */
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Dropdown for college selection
 col1, col2 = st.columns(2)
