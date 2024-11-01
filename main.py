@@ -1,7 +1,10 @@
 import streamlit as st
 import openai
-import PyPDF2
+import PyPDF2 
 
+def add_space(n=1):
+  for _ in range(n):
+    st.sidebar.text(" ")
 
 # Initialize OpenAI with your API key
 secret_key = st.secrets["openapi"]["openapi_key"]
@@ -9,7 +12,7 @@ openai.api_key = secret_key
 model_input = "gpt-4"  # Adjust to "gpt-4", "gpt-3.5-turbo" as needed
 
 ##Initialize
-st.sidebar.image("Gbot.jpg", use_column_width=True)
+st.sidebar.image("Essbot.jpg", use_column_width=True)
 st.sidebar.divider()
 lnkd_profile_url="https://www.linkedin.com/in/rajvarahagiri/"
 st.sidebar.markdown("[Rajkumar Varahagiri](%s)" % lnkd_profile_url)  
@@ -30,7 +33,7 @@ st.sidebar.text(" ")
 st.sidebar.text(" ")
 st.sidebar.markdown("[Privacy Policy](%s)" % pp)  
 
-image_file="Gbot.jpg"
+image_file="Essbot.jpg"
 st.image(image_file, use_column_width=True)
 link_url="https://graderbotai.com/"
 
@@ -79,9 +82,7 @@ user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
 essay = st.text_area("Enter your essay paragraph here:", height=300, value=sample_essay)
 
 
-def add_space(n=1):
-  for _ in range(n):
-    st.sidebar.text(" ")
+
 
 # Function to modify essay using OpenAI ChatCompletion API
 def get_modified_essay(essay, mission, vision, user_prompt):
