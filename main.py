@@ -3,6 +3,10 @@ import openai
 import PyPDF2 
 from PIL import Image
 
+def count_words(text):
+    if text:
+        return len(text.split())
+    return 0
 
 def add_space(n=1):
   for _ in range(n):
@@ -70,11 +74,40 @@ sample_essay = """I witnessed how powerful Python coding language is. I learned 
 
 sample_prompt="Why do you want to study your chosen major and why do you want to study your major in this university"
 
+sample_words = 300
+
+essay_words_min_value = 0
+essay_words_max_value = 1000
+essay_words_initial_value = 300
+
+# Create a slider
+slider_value = st.slider("Select a value:", min_value=essay_words_min_value, max_value=essay_words_max_value, value=essay_words_initial_value)
+
+# Create a number input, initialized to the slider's value
+number_input_value = st.number_input("Enter a number:", min_value=min_value, max_value=max_value, value=slider_value)
+
+# Display the selected values
+st.write(f"Slider value: {slider_value}")
+st.write(f"Number input value: {number_input_value}")
+
+# Optional: Update the number input value when the slider changes
+if slider_value != number_input_value:
+    number_input_value = slider_value
+
 # Input text area for custom prompt
 user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
 
+# Input text area for custom prompt
+essay_words = st.text_area("Max Essay Word Count:", value=sample_words)
+
 # Input text area for essay paragraph
 essay = st.text_area("Enter your essay paragraph here:", height=300, value=sample_essay)
+
+# Calculate word count
+word_count = count_words(essay)
+
+# Display the word count next to the text box
+st.write(f"Word count: {word_count}")
 
 # Step 1: Initialize the button state in session state if not already present
 if "button_disabled" not in st.session_state:
@@ -156,7 +189,7 @@ def get_modified_essay(essay, mission, vision, user_prompt):
             model=model_input,
             messages=[
                 {"role": "system", "content": "You are an assistant that helps revise college essays to better align with college missions, visions, and user-provided prompts."},
-                {"role": "user", "content": f"Here is a college essay written by a student:\n\nEssay: {essay}\n\nThe mission of the college is: {mission}\nThe vision of the college is: {vision}\n\nUser-Provided Prompt: {user_prompt}\n\nPlease revise the essay to align with the mission, vision, and user provided prompt, making it more compelling for the admissions committee."}
+                {"role": "user", "content": f"Here is a college essay written by a student:\n\nEssay: {essay}\n\nThe mission of the college is: {mission}\nThe vision of the college is: {vision}\n\nUser-Provided Prompt: {user_prompt}\n\nPlease revise the essay to align with the mission, vision, and user provided prompt, making it more compelling for the admissions committee. Please restrict the length of the essay to strictly {number_input_value} words."}
             ],
             temperature=1,
             max_tokens=1000,
