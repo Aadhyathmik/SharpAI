@@ -8,10 +8,6 @@ secret_key = st.secrets["openapi"]["openapi_key"]
 openai.api_key = secret_key
 model_input = "gpt-4"  # Adjust to "gpt-4", "gpt-3.5-turbo" as needed
 
-# Dropdown for college selection
-college1 = st.selectbox("Select the first college:", list(college_data.keys()))
-college2 = st.selectbox("Select the second college:", list(college_data.keys()))
-
 # Sample list of colleges with mission and vision statements
 college_data = {
     "Harvard": {
@@ -28,6 +24,12 @@ college_data = {
     }
     # Add more colleges as needed
 }
+
+# Dropdown for college selection
+college1 = st.selectbox("Select the first college:", list(college_data.keys()))
+college2 = st.selectbox("Select the second college:", list(college_data.keys()))
+
+
 
 sample_essay = """I witnessed how powerful Python coding language is. I learned it and created a small project.
     I want to take advanced computer science and use technology to solve real-world problems.
@@ -73,7 +75,6 @@ def get_modified_essay(essay, mission, vision, user_prompt):
         return f"Error: {str(e)}"
 
 def initialize():
-
     st.sidebar.image("Gbot.jpg", use_column_width=True)
     st.sidebar.divider()
     lnkd_profile_url="https://www.linkedin.com/in/rajvarahagiri/"
@@ -101,8 +102,6 @@ def initialize():
 
     st.divider()
     st.title("GraderBot College Essay Companion")
-
-
     
 def main():
     """ The main function that handles the Streamlit app logic.  """
