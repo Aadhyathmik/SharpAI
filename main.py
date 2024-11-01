@@ -28,6 +28,7 @@ college_data = {
 # Function to modify essay using OpenAI ChatCompletion API
 def get_modified_essay(essay, mission, vision, user_prompt):
     try:
+        client = openai.Client(api_key=secret_key)
         response = openai.ChatCompletion.create(
             model=model_input,
             messages=[
