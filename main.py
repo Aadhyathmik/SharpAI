@@ -83,8 +83,8 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader(f"Revised Essay for {college1}")
-    st.text_area(f"Revised Essay for {college1}", revised_essay_college1, height=150, disabled=True, key="revised_essay1")
+    st.text_area(f"Revised Essay for {college1}", revised_essay_college1, height=600, disabled=True, key="revised_essay1")
     
 with col2:
     st.subheader(f"Revised Essay for {college2}")
-    st.text_area(f"Revised Essay for {college2}", revised_essay_college2, height=150, disabled=True, key="revised_essay2")
+    st.text_area(f"Revised Essay for {college2}", revised_essay_college2, height=600, disabled=True, key="revised_essay2")
