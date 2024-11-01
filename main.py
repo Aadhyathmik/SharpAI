@@ -40,6 +40,25 @@ st.sidebar.markdown("[Privacy Policy](%s)" % pp)
 st.divider()
 st.title("ESSBOT College Essay Companion")
 
+sample_essay = """I witnessed how powerful Python coding language is. I learned it and created a small project.
+    I want to take advanced computer science and use technology to solve real-world problems.
+    Using new technologies, we can tackle issues in education, farming, and other areas.
+
+    I participated in my computer science club at my school, where we learned collaboratively.
+    We also talked to many tech professionals to understand what they are currently working on.
+
+    I once participated in a hackathon where the theme was how we can make use of solar energy. I joined a team and built a prototype. It was so much fun."""
+
+sample_prompt="Why do you want to study your chosen major and why do you want to study your major in this university"
+
+# Input text area for custom prompt
+user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
+
+# Input text area for essay paragraph
+essay = st.text_area("Enter your essay paragraph here:", height=300, value=sample_essay)
+
+
+
 
 # Sample list of colleges with mission and vision statements
 college_data = {
@@ -63,23 +82,6 @@ college1 = st.selectbox("Select the first college:", list(college_data.keys()))
 college2 = st.selectbox("Select the second college:", list(college_data.keys()))
 
 
-
-sample_essay = """I witnessed how powerful Python coding language is. I learned it and created a small project.
-    I want to take advanced computer science and use technology to solve real-world problems.
-    Using new technologies, we can tackle issues in education, farming, and other areas.
-
-    I participated in my computer science club at my school, where we learned collaboratively.
-    We also talked to many tech professionals to understand what they are currently working on.
-
-    I once participated in a hackathon where the theme was how we can make use of solar energy. I joined a team and built a prototype. It was so much fun."""
-
-sample_prompt="Why do you want to study your chosen major and why do you want to study your major in this university"
-
-# Input text area for custom prompt
-user_prompt = st.text_area("Enter the Essay Prompt:", value=sample_prompt)
-
-# Input text area for essay paragraph
-essay = st.text_area("Enter your essay paragraph here:", height=300, value=sample_essay)
 
 
 
