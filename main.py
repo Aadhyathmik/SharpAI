@@ -37,10 +37,22 @@ image_file="Essbot3.jpg"
 #st.image(image_file, width=300)
 #link_url="https://graderbotai.com/"
 
-st.markdown('<div class="centered-image">', unsafe_allow_html=True)
-st.image(image_file, use_column_width=False, width=300)  # Adjust width as needed
-st.markdown('</div>', unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    .centered-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+#st.image(image_file, use_column_width=False, width=300)  # Adjust width as needed
+#st.markdown('</div>', unsafe_allow_html=True)
 
+st.divider()
 st.title("ESSBOT College Essay Companion")
 st.divider()
 
