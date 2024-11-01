@@ -113,7 +113,8 @@ with col2:
 
 col3, col4, col5 = st.columns(3)
 with col4 :
-    submit_button = st.button('Revise Essay for Selected Colleges')
+    submit_button = st.button('Revise Essay for Selected Colleges',use_container_width=True)
+    
 
 # Dropdown for college selection
 #college1 = st.selectbox("Select the first college:", list(college_data.keys()), index=default_index1)
