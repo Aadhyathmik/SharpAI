@@ -8,6 +8,36 @@ secret_key = st.secrets["openapi"]["openapi_key"]
 openai.api_key = secret_key
 model_input = "gpt-4"  # Adjust to "gpt-4", "gpt-3.5-turbo" as needed
 
+##Initialize
+st.sidebar.image("Gbot.jpg", use_column_width=True)
+st.sidebar.divider()
+lnkd_profile_url="https://www.linkedin.com/in/rajvarahagiri/"
+st.sidebar.markdown("[Rajkumar Varahagiri](%s)" % lnkd_profile_url)  
+st.sidebar.title("Welcome")
+st.sidebar.text(" ")
+st.sidebar.text(" ")
+st.sidebar.header("This is a restricted version of Essay Bot AI. Can't be used or reproduced without the author's permission.")
+st.sidebar.text(" ")
+st.sidebar.text(" ")
+add_space(5)
+tos="https://graderbotai.com/terms-and-conditions/"
+pp="https://graderbotai.com/privacy-policy/"
+
+st.sidebar.text(" ")
+st.sidebar.text(" ")
+st.sidebar.markdown("[Terms of Service](%s)" % tos)  
+st.sidebar.text(" ")
+st.sidebar.text(" ")
+st.sidebar.markdown("[Privacy Policy](%s)" % pp)  
+
+image_file="Gbot.jpg"
+st.image(image_file, use_column_width=True)
+link_url="https://graderbotai.com/"
+
+st.divider()
+st.title("GraderBot College Essay Companion")
+
+
 # Sample list of colleges with mission and vision statements
 college_data = {
     "Harvard": {
@@ -74,40 +104,12 @@ def get_modified_essay(essay, mission, vision, user_prompt):
     except Exception as e:
         return f"Error: {str(e)}"
 
-def initialize():
-    st.sidebar.image("Gbot.jpg", use_column_width=True)
-    st.sidebar.divider()
-    lnkd_profile_url="https://www.linkedin.com/in/rajvarahagiri/"
-    st.sidebar.markdown("[Rajkumar Varahagiri](%s)" % lnkd_profile_url)  
-    st.sidebar.title("Welcome")
-    st.sidebar.text(" ")
-    st.sidebar.text(" ")
-    st.sidebar.header("This is a restricted version of Essay Bot AI. Can't be used or reproduced without the author's permission.")
-    st.sidebar.text(" ")
-    st.sidebar.text(" ")
-    add_space(5)
-    tos="https://graderbotai.com/terms-and-conditions/"
-    pp="https://graderbotai.com/privacy-policy/"
-
-    st.sidebar.text(" ")
-    st.sidebar.text(" ")
-    st.sidebar.markdown("[Terms of Service](%s)" % tos)  
-    st.sidebar.text(" ")
-    st.sidebar.text(" ")
-    st.sidebar.markdown("[Privacy Policy](%s)" % pp)  
-
-    image_file="Gbot.jpg"
-    st.image(image_file, use_column_width=True)
-    link_url="https://graderbotai.com/"
-
-    st.divider()
-    st.title("GraderBot College Essay Companion")
+    
     
 def main():
     """ The main function that handles the Streamlit app logic.  """
 
-    initialize();    
-    
+   
     # Button to generate revised essays
     if st.button("Revise Essay for Selected Colleges"):
         # Get the mission and vision for each selected college
