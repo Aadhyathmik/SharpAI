@@ -103,20 +103,17 @@ default_index1 = list(college_data.keys()).index("MIT")  # Default to "MIT"
 # Set a default index for the selectbox
 default_index2 = list(college_data.keys()).index("Harvard")  # Default to "Harvard"
 
-st.markdown(
-    """
-    <style>
-    .css-1n76uvr.e16nr0p30 { 
-        background-color: #4CAF50; /* Green color */
-        color: white;
+m = st.markdown("""
+<style>
+div.stButton > button:first-child {
+    background-color: #0099ff;
+    color:#ffffff;
+}
+div.stButton > button:hover {
+    background-color: #00ff00;
+    color:#ff0000;
     }
-    .css-1n76uvr.e16nr0p30:hover {
-        background-color: #45a049; /* Darker green on hover */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+</style>""", unsafe_allow_html=True)
 
 # Dropdown for college selection
 col1, col2 = st.columns(2)
