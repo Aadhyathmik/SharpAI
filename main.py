@@ -15,7 +15,7 @@ def add_space(n=1):
 # Initialize OpenAI with your API key
 secret_key = st.secrets["openapi"]["openapi_key"]
 openai.api_key = secret_key
-model_input = "gpt-4"  # Adjust to "gpt-4", "gpt-3.5-turbo" as needed
+model_input = "gpt-4o-mini" #"gpt-4"  # Adjust to "gpt-4", "gpt-3.5-turbo" as needed
 
 ##Initialize
 st.sidebar.image("Essbot3.jpg", use_column_width=True)
@@ -241,7 +241,7 @@ def main():
             f"🎓✨ Congratulations! Your essay has been successfully revised for "
             f"**{college1} and {college2} **! 🎉\n\n"
             "Your hard work is about to pay off, and we can't wait to see you shine! "
-            "Take a moment to review the changes and prepare to submit your masterpiece! 🚀"
+            "Take a moment to review the changes, make edits as necessary and prepare to submit your masterpiece! 🚀"
             )
             st.success(message)
     else:
