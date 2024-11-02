@@ -219,6 +219,10 @@ with col2:
         st.subheader(f"{college2} Vision")
         st.write(college_data[college2]["vision"])
 
+col1.write("")  # Blank line to push content down if needed
+col2.write("")
+
+
 col3, col4, col5 = st.columns(3)
 with col4 :
     submit_button = st.button('Revise Essay',use_container_width=True)
