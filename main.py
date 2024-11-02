@@ -132,8 +132,39 @@ college_data = {
     "MIT": {
         "mission": "To advance knowledge and educate students in science, technology, and other areas.",
         "vision": "MIT’s mission is to serve the nation and the world by advancing knowledge."
+    },
+    "UCLA": {
+        "mission": "To create, disseminate, preserve, and apply knowledge for the betterment of our global society.",
+        "vision": "UCLA strives to be a public research university committed to excellence, inclusivity, and service."
+    },
+    "UCSD": {
+        "mission": "To transform California and a diverse global society by educating, generating, and disseminating knowledge and creative works.",
+        "vision": "UCSD aspires to be a student-centered, research-focused, service-oriented public university."
+    },
+    "UC Berkeley": {
+        "mission": "To generate, disseminate, preserve, and apply knowledge to advance the human condition globally.",
+        "vision": "UC Berkeley’s vision is to be a premier research institution that impacts society positively through knowledge and discovery."
+    },
+    "UCSB": {
+        "mission": "To promote knowledge through research, teaching, and creativity, serving California, the nation, and the world.",
+        "vision": "UCSB aspires to foster academic excellence and social responsibility as a leading research university."
+    },
+    "UIUC": {
+        "mission": "To enhance the lives of citizens in Illinois, across the nation, and around the world through leadership in learning, discovery, engagement, and economic development.",
+        "vision": "UIUC aims to be a preeminent public research university with a transformative societal impact."
+    },
+    "UT Austin": {
+        "mission": "To achieve excellence in the interrelated areas of undergraduate education, graduate education, research, and public service.",
+        "vision": "UT Austin’s vision is to be a world-class university that educates leaders and generates knowledge for societal benefit."
+    },
+    "Carnegie Mellon": {
+        "mission": "To create a transformative educational experience that develops leaders and innovators to solve global challenges.",
+        "vision": "Carnegie Mellon envisions a world where knowledge is at the service of society and advances the human condition."
+    },
+    "Purdue": {
+        "mission": "To provide an education that combines rigorous academic study and the excitement of discovery with the support and intellectual stimulation of a diverse campus community.",
+        "vision": "Purdue strives to be a global leader in engineering, technology, and sciences, driving impactful research and learning."
     }
-    # Add more colleges as needed
 }
 
 
@@ -172,9 +203,21 @@ with col1:
     st.markdown("**Choose a college:**")
     college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
 
+    if college1:
+        st.subheader(f"{selected_college} Mission")
+        st.write(college_data[selected_college]["mission"])
+        st.subheader(f"{selected_college} Vision")
+        st.write(college_data[selected_college]["vision"])
+
 with col2:
     st.markdown("**Choose a college:**")
     college2 = st.selectbox("", list(college_data.keys()), index=default_index2)
+
+    if college2:
+        st.subheader(f"{selected_college} Mission")
+        st.write(college_data[selected_college]["mission"])
+        st.subheader(f"{selected_college} Vision")
+        st.write(college_data[selected_college]["vision"])
 
 col3, col4, col5 = st.columns(3)
 with col4 :
