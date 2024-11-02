@@ -204,20 +204,20 @@ with col1:
     college1 = st.selectbox("Select college:", list(college_data.keys()), index=default_index1)
 
     if college1:
-        st.subheader(f"{selected_college} Mission")
-        st.write(college_data[selected_college]["mission"])
-        st.subheader(f"{selected_college} Vision")
-        st.write(college_data[selected_college]["vision"])
+        st.subheader(f"{college1} Mission")
+        st.write(college_data[college1]["mission"])
+        st.subheader(f"{college1} Vision")
+        st.write(college_data[college1]["vision"])
 
 with col2:
     st.markdown("**Choose a college:**")
     college2 = st.selectbox("", list(college_data.keys()), index=default_index2)
 
     if college2:
-        st.subheader(f"{selected_college} Mission")
-        st.write(college_data[selected_college]["mission"])
-        st.subheader(f"{selected_college} Vision")
-        st.write(college_data[selected_college]["vision"])
+        st.subheader(f"{college2} Mission")
+        st.write(college_data[college2]["mission"])
+        st.subheader(f"{college2} Vision")
+        st.write(college_data[college2]["vision"])
 
 col3, col4, col5 = st.columns(3)
 with col4 :
